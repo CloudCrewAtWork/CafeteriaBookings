@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "424475826152",
+    "firebase_url": "https://cafeterianb.firebaseio.com",
+    "project_id": "cafeterianb",
+    "storage_bucket": "cafeterianb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424475826152:android:ee937ce52d8e973ed7365d",
+        "android_client_info": {
+          "package_name": "com.anurag.cafeteriabookings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424475826152-23frlugkt4dd1d1f335hqeu21679goim.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCySd0_dZ2_-m-7ayJ5FuqyxQDrovlHh_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424475826152-23frlugkt4dd1d1f335hqeu21679goim.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
