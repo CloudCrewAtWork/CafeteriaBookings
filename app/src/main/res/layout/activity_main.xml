@@ -8,19 +8,19 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/Registerbutton"
+        android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginBottom="124dp"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Loginbutton"
+        app:layout_constraintEnd_toStartOf="@+id/loginButton"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/EmaileditText"
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/PasswordeditText"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -45,10 +45,10 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmaileditText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <TextView
-        android:id="@+id/EmailTextView"
+        android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
@@ -56,11 +56,11 @@
         android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/EmaileditText"
+        app:layout_constraintEnd_toStartOf="@+id/emailEditText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/PasswordTextView"
+        android:id="@+id/passwordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -68,11 +68,11 @@
         android:text="Password"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/PasswordeditText"
-        app:layout_constraintTop_toBottomOf="@+id/EmailTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
 
     <Button
-        android:id="@+id/Loginbutton"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="96dp"
