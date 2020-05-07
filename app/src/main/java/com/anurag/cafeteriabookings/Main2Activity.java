@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +18,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Main2Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    TextView loginId2;
-    TextView epass;
-    TextView uID2;
-    TextView nom2;
+    EditText loginId2;
+    EditText epass;
+    EditText uID2;
+    EditText nom2;
 
 
     public void submitPressed(View view){
