@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/emailEditText"
+        android:id="@+id/emailEditText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/passwordEditText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
@@ -46,10 +46,10 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText2" />
 
     <TextView
-        android:id="@+id/emailTextView"
+        android:id="@+id/emailTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
@@ -57,11 +57,11 @@
         android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/emailEditText"
+        app:layout_constraintEnd_toStartOf="@+id/emailEditText2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/passwordTextView"
+        android:id="@+id/passwordTextView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -69,8 +69,8 @@
         android:text="Password"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/passwordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/passwordEditText2"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView2" />
 
     <Button
         android:id="@+id/loginButton"

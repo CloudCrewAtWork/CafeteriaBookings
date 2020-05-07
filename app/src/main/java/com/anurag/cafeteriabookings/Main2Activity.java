@@ -17,15 +17,15 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Main2Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    TextView loginId;
-    TextView passcode;
-    TextView uID;
-    TextView nom;
+    TextView loginId2;
+    TextView passcode2;
+    TextView uID2;
+    TextView nom2;
 
 
     public void submitPressed(View view){
-        String email = loginId.getText().toString();
-        String password = passcode.getText().toString();
+        String email = loginId2.getText().toString();
+        String password = passcode2.getText().toString();
 //        String uniqueId = uID.getText().toString();
 //        String name = nom.getText().toString();
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -57,10 +57,10 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mAuth = FirebaseAuth.getInstance();
-        loginId = findViewById(R.id.emailTextView);
-        passcode = findViewById(R.id.passwordTextView);
-        uID = findViewById(R.id.uniqueIdTextView);
-        nom = findViewById(R.id.nameTextView);
+        loginId2 = findViewById(R.id.emailTextView2);
+        passcode2 = findViewById(R.id.passwordTextView2);
+        uID2 = findViewById(R.id.uniqueIdTextView2);
+        nom2 = findViewById(R.id.nameTextView2);
 
 
     }
