@@ -67,8 +67,6 @@ public class MainActivity extends AppCompatActivity {
         register = findViewById(R.id.registerButton);
         login = findViewById(R.id.loginButton);
         // Initialize Firebase Auth
-        email = loginId.getText().toString();
-
         mAuth = FirebaseAuth.getInstance();
 
 
