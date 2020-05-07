@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         register = findViewById(R.id.Registerbutton);
         login = findViewById(R.id.Loginbutton);
         // Initialize Firebase Auth
+        email = loginId.getText().toString();
+
         mAuth = FirebaseAuth.getInstance();
 
 
