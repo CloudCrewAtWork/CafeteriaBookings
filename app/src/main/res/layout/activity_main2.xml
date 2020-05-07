@@ -8,7 +8,7 @@
     tools:context=".Main2Activity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/passwordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
@@ -16,11 +16,11 @@
         android:text="Password"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toStartOf="@+id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/uniqueIdTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
@@ -28,11 +28,11 @@
         android:text="UniqueId"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintEnd_toStartOf="@+id/uniqueIdEditText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
@@ -40,11 +40,11 @@
         android:text="Name  "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toStartOf="@+id/nameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/uniqueIdTextView" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="162dp"
@@ -52,11 +52,11 @@
         android:text="Email "
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/emailEditText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/emailEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
@@ -64,12 +64,12 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/passwordEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
@@ -77,12 +77,12 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/uniqueIdEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -90,12 +90,12 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/nameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -103,19 +103,20 @@
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/uniqueIdEditText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="165dp"
         android:layout_marginBottom="200dp"
+        android:onClick="submitPressed"
         android:text="Submit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
