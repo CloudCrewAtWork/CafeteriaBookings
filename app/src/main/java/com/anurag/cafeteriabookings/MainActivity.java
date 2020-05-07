@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
     EditText passCode;
     Button register;
     Button login;
+    public void registerPressed(View view){
 
+
+    }
     public void loginPressed(View view){
 
         String email = loginId.getText().toString();
