@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("loginPressed", "signInWithEmail:success");
+                            Toast.makeText(MainActivity.this, "signInWithEmail:success.",
+                                    Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 //
                         } else {
