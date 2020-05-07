@@ -18,17 +18,19 @@ import com.google.firebase.auth.FirebaseUser;
 public class Main2Activity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     TextView loginId2;
-    TextView passcode2;
+    TextView epass;
     TextView uID2;
     TextView nom2;
 
 
     public void submitPressed(View view){
-        String email = loginId2.getText().toString();
-        String password = passcode2.getText().toString();
+
+
+        String email1 = loginId2.getText().toString();
+        String password1 = epass.getText().toString();
 //        String uniqueId = uID.getText().toString();
 //        String name = nom.getText().toString();
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email1, password1)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -57,10 +59,10 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mAuth = FirebaseAuth.getInstance();
-        loginId2 = findViewById(R.id.emailTextView2);
-        passcode2 = findViewById(R.id.passwordTextView2);
-        uID2 = findViewById(R.id.uniqueIdTextView2);
-        nom2 = findViewById(R.id.nameTextView2);
+        loginId2 = findViewById(R.id.emailEditText2);
+        epass = findViewById(R.id.passwordEditText2);
+        uID2 = findViewById(R.id.uniqueIdEditText2);
+        nom2 = findViewById(R.id.nameEditText2);
 
 
     }
