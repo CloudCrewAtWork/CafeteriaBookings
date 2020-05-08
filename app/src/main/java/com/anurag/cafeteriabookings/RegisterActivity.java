@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.util.UidVerifier;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -30,40 +31,44 @@ public class RegisterActivity extends AppCompatActivity {
     EditText epass;
     EditText uID2;
     EditText nom2;
+    ArrayList<String> availableIDs;
 
-
-    public void submitPressed(View view) throws IOException, JSONException {
+    public void submitPressed(View view) {
 
         String email1 = loginId2.getText().toString();
         String password1 = epass.getText().toString();
 
-        mAuth.createUserWithEmailAndPassword(email1, password1)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("submitPressed", "createUserWithEmail:success");
-                            Toast.makeText(RegisterActivity.this, "createUserWithEmail:success.",
-                                    Toast.LENGTH_SHORT).show();
+        if (availableIDs.contains(uID2.getText().toString())) {
+            mAuth.createUserWithEmailAndPassword(email1, password1)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("submitPressed", "createUserWithEmail:success");
+                                Toast.makeText(RegisterActivity.this, "createUserWithEmail:success.",
+                                        Toast.LENGTH_SHORT).show();
 
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("submitPressed", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("submitPressed", "createUserWithEmail:failure", task.getException());
+                                Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
 
                         }
-
-                        // ...
-                    }
-                });
+                    });
+        } else {
+            Toast.makeText(RegisterActivity.this, "Not allowed to register",
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void checkID() throws IOException, JSONException {
         JSONReader jsonReader = new JSONReader();
         JSONArray ids = jsonReader.readJsonFromUrl("https://sheetsu.com/apis/v1.0su/f1ca81c31d64#");
-        ArrayList<String> availableIDs = new ArrayList<>();
+        availableIDs = new ArrayList<>();
 
         for (int i=0;i<ids.length();i++) {
             String temp = ids.getJSONObject(i).getString("id");
