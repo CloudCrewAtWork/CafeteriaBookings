@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     Button register;
     Button login;
     public void registerPressed(View view){
-        Intent myIntent = new Intent(MainActivity.this, Main2Activity.class);
+        Intent myIntent = new Intent(MainActivity.this, RegisterActivity.class);
         MainActivity.this.startActivity(myIntent);
 
 
