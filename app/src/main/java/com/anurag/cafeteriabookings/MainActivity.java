@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,45 +25,6 @@ public class MainActivity extends AppCompatActivity {
     EditText passCode;
     Button register;
     Button login;
-    public void registerPressed(View view){
-        Intent myIntent = new Intent(MainActivity.this, RegisterActivity.class);
-        MainActivity.this.startActivity(myIntent);
-
-
-    }
-    public void loginPressed(View view){
-
-        String email = loginId.getText().toString();
-        String password = passCode.getText().toString();
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-
-
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-
-
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("loginPressed", "signInWithEmail:success");
-                            Toast.makeText(MainActivity.this, "signInWithEmail:success.",
-                                    Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-//
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("loginPressed", "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-//
-                            // ...
-                        }
-
-                        // ...
-                    }
-                });
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +37,42 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
 
+    public void registerPressed(View view) {
+        Intent myIntent = new Intent(MainActivity.this, RegisterActivity.class);
+        MainActivity.this.startActivity(myIntent);
 
+    }
+
+    public void loginPressed(View view) {
+
+        String email = loginId.getText().toString();
+        String password = passCode.getText().toString();
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("loginPressed", "signInWithEmail:success");
+                            Toast.makeText(MainActivity.this, "signInWithEmail:success.",
+                                    Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("loginPressed", "signInWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    }
+                });
     }
 
 }

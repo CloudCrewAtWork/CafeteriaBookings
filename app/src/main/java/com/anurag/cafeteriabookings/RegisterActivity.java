@@ -46,7 +46,6 @@ public class RegisterActivity extends AppCompatActivity {
                             Log.d("submitPressed", "createUserWithEmail:success");
                             Toast.makeText(RegisterActivity.this, "createUserWithEmail:success.",
                                     Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -69,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
         for (int i=0;i<ids.length();i++) {
             String temp = ids.getJSONObject(i).getString("id");
             availableIDs.add(temp);
-            Log.d("IDs", availableIDs.toString());
-        }
+       }
+        Log.d("IDs", availableIDs.toString());
     }
 
     @Override
