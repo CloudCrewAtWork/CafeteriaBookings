@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,7 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Main2Activity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     EditText loginId2;
     EditText epass;
@@ -38,14 +37,14 @@ public class Main2Activity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("submitPressed", "createUserWithEmail:success");
-                            Toast.makeText(Main2Activity.this, "createUserWithEmail:success.",
+                            Toast.makeText(RegisterActivity.this, "createUserWithEmail:success.",
                                     Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("submitPressed", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(Main2Activity.this, "Authentication failed.",
+                            Toast.makeText(RegisterActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 
                         }
@@ -58,7 +57,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
         loginId2 = findViewById(R.id.emailEditText2);
         epass = findViewById(R.id.passwordEditText2);
